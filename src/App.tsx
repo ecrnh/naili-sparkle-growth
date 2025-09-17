@@ -6,6 +6,10 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import Dashboard from "@/pages/Dashboard";
 import Appointments from "@/pages/Appointments";
+import Customers from "@/pages/Customers";
+import Staff from "@/pages/Staff";
+import Finance from "@/pages/Finance";
+import Settings from "@/pages/Settings";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,9 +25,9 @@ const App = () => (
             <Route index element={<Navigate to="/dashboard" replace />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="appointments" element={<Appointments />} />
-            <Route path="customers" element={<div className="text-2xl">Müşteriler (Yakında)</div>} />
-            <Route path="staff" element={<div className="text-2xl">Personel (Yakında)</div>} />
-            <Route path="finance" element={<div className="text-2xl">Finanslar (Yakında)</div>} />
+            <Route path="customers" element={<Customers />} />
+            <Route path="staff" element={<Staff />} />
+            <Route path="finance" element={<Finance />} />
             <Route path="packages" element={<div className="text-2xl">Paketler (Yakında)</div>} />
             <Route path="notifications" element={<div className="text-2xl">Bildirimler (Yakında)</div>} />
             <Route path="reports" element={<div className="text-2xl">Raporlar (Yakında)</div>} />
@@ -31,7 +35,7 @@ const App = () => (
             <Route path="call-center" element={<div className="text-2xl">Çağrı Merkezi (Yakında)</div>} />
             <Route path="reminders" element={<div className="text-2xl">Hatırlatmalar (Yakında)</div>} />
             <Route path="invoices" element={<div className="text-2xl">Faturalar (Yakında)</div>} />
-            <Route path="settings" element={<div className="text-2xl">Ayarlar (Yakında)</div>} />
+            <Route path="settings" element={<Settings />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
